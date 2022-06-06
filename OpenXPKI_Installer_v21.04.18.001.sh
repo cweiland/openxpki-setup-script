@@ -980,9 +980,9 @@ else
  echo -e "\nThis config file has not been edited by this script. Assuming it's a new copy from the "
  echo -e "from the Realm.Tpl directory, we're going to prep it for operation. "
  # Have to keep the first sed command at the top because we're counting lines.
- sed -i '53 s|default:|# default:|g' ${REALM_YAML}
- sed -i '43d' ${REALM_YAML}
- sed -i '42 a\    key: /etc/openxpki/local/keys/[% PKI_REALM %]/[% ALIAS %].pem' ${REALM_YAML}
+ sed -i '55 s|default:|# default:|g' ${REALM_YAML}
+ sed -i '45d' ${REALM_YAML}
+ sed -i '44 a\    key: /etc/openxpki/local/keys/[% PKI_REALM %]/[% ALIAS %].pem' ${REALM_YAML}
  sed -i -z 's/import:/# import:/1' ${REALM_YAML}
  sed -i -z 's/secret: default/# secret: default/' ${REALM_YAML}
  sed -i '/ca-signer:/a\    secret: ca-signer' ${REALM_YAML} # Add version number?
